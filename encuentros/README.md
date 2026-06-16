@@ -1,30 +1,32 @@
-# Cómo hacer tu encuentro en Barranco
+# Cómo hacer tu encuentro en el Barranco
 
-Barranco es un espacio cultural alternativo en Mallasa: jardín, casa, quebrada, barra, fuego, música, cine, yoga, comida, conversación y gente que llega con ganas de hacer algo bonito.
+El Barranco es un espacio cultural alternativo en Mallasa: jardín, casa, vistas, barra, fuego, música, cine, yoga, comida, conversación y gente que llega con ganas de hacer algo bonito.
 
-Cuando hablamos de **encuentros en modo Barranco**, no pensamos en un alquiler cerrado donde alguien entrega una llave y se desentiende. Pensamos en una forma más viva de usar el espacio: con libertad, confianza, cuidado y una regla simple:
+Cuando hablamos de encuentros en *“modo Barranco”*, no pensamos solo en alquilar un espacio y entregar una llave. Pensamos en una forma más viva de usarlo: con libertad, confianza, cuidado y una regla simple:
 
 > dejar el Barranco igual o mejor de como lo encontramos.
 
-Este documento es una base v0.1 para personas que quieren volver con amigas, celebrar algo, cocinar, compartir música, hacer un taller, proyectar una película, organizar un cumpleaños, abrir una práctica, o simplemente proponer un encuentro que tenga sentido con el lugar.
+Este documento es una base v0.1 para personas, grupos, familias, colectivos o comunidades que quieren celebrar algo, cocinar, compartir música, hacer un taller, proyectar una película, organizar un cumpleaños, abrir una práctica o proponer un encuentro que resuene con el lugar.
+
+Si ya conoces el Barranco y quieres volver con tu grupo, puedes ir directo a [Si ya viniste y quieres volver](#si-ya-viniste-y-quieres-volver). Si estás imaginando algo más grande, revisa también [Para encuentros más grandes](#para-encuentros-más-grandes).
 
 ## Qué puede pasar aquí
 
 Algunas posibilidades:
 
-- encuentros pequeños entre amistades;
-- cumpleaños tranquilos;
-- comidas compartidas;
-- talleres, clases o prácticas;
+- encuentros entre amistades, familias, colectivos o comunidades;
+- cumpleaños, despedidas, bienvenidas y celebraciones;
+- comidas compartidas, parrilla o cocina coordinada;
+- talleres, clases, prácticas o laboratorios creativos;
 - yoga, bienestar, movimiento o conversación;
 - cine al aire libre o bajo techo;
-- música acústica, sesiones suaves o escucha compartida;
-- despedidas, bienvenidas, celebraciones y reuniones especiales;
+- música, sesiones de escucha, DJ o sonido coordinado;
+- exposiciones, ferias, activaciones culturales o reuniones especiales;
 - ideas nuevas que todavía no tienen nombre.
 
 No todo tiene que ser un evento grande. A veces lo más Barranco es algo simple, bien cuidado y bien vivido.
 
-## El modo Barranco
+## El *“modo Barranco”*
 
 La idea base es que el espacio se abre con confianza, pero esa confianza necesita cuidado concreto.
 
@@ -40,11 +42,11 @@ Quien organiza un encuentro ayuda a que estas cosas estén claras:
 
 La libertad funciona mejor cuando hay acuerdos simples.
 
-## No es una tarifa fija todavía
+## Cómo vemos los costos
 
-Esta es una base viva, no una lista final de precios.
+Esta es una base viva: los costos se afinan según cada encuentro.
 
-Cada encuentro puede necesitar cosas distintas. Por eso, antes de cerrar algo, preferimos conversar y preparar una propuesta manual según el caso.
+Cada encuentro puede necesitar cosas distintas. Por eso, antes de cerrar algo, preferimos conversar y preparar una propuesta personalizada según el caso.
 
 Los costos, depósitos o apoyos pueden variar según:
 
@@ -58,11 +60,11 @@ Los costos, depósitos o apoyos pueden variar según:
 - nivel de preparación que necesita el espacio;
 - estado final en el que queda todo.
 
-La intención no es complicar. Es cuidar que el encuentro sea posible sin cargarle al espacio costos invisibles.
+Es una forma de cuidar que el encuentro funcione sin cargarle al espacio costos invisibles.
 
 ## Si ya viniste y quieres volver
 
-Si ya conoces el Barranco, viniste con gente, se organizaron bien, consumieron, limpiaron, cuidaron y quieren repetir, ese es un buen punto de partida.
+Si ya conoces el Barranco y quieres volver con tu grupo, ese es un buen punto de partida: hayas venido como visitante, cliente, tallerista, artista, amigo de la casa o parte de una comunidad.
 
 Escríbenos algo simple:
 
@@ -77,7 +79,7 @@ Con eso podemos responder mejor y armar una propuesta concreta.
 
 ## Para encuentros más grandes
 
-Si la idea crece, también se puede conversar. Despedidas, talleres, música, comida, cine, yoga, cumpleaños o encuentros con más gente necesitan un poco más de forma.
+El Barranco también recibe encuentros más grandes: despedidas, talleres, música, comida, cine, yoga, cumpleaños o activaciones con más gente. Solo necesitan un poco más de forma.
 
 En esos casos conviene definir:
 
@@ -112,14 +114,14 @@ Algo importante a cuidar:
 
 No tiene que estar perfecto. Sirve para empezar la conversación.
 
+## Cómo escribirnos
+
+Por ahora puedes escribirnos por WhatsApp: [abrir conversación](https://wa.me/59172041572?text=Hola%20Ernesto%2C%20quiero%20hacer%20un%20encuentro%20en%20el%20Barranco.%20Te%20cuento%20mi%20idea%3A)
+
+Cuéntanos tu idea con el formato de arriba y te respondemos para armar una propuesta personalizada.
+
 ## Acuerdo básico
 
 Barranco puede abrirse de muchas maneras, pero no queremos que el espacio se vuelva una máquina de eventos. Queremos que siga siendo un lugar con vida, confianza y memoria.
 
-Por eso, cada encuentro se conversa caso por caso. Si la idea hace sentido, buscamos la forma. Si necesita ajustes, los decimos. Si no es buen momento o no encaja con el espacio, también lo diremos con claridad.
-
-## Changelog v0.1
-
-- **v0.1:** primera base pública y viva para explicar encuentros en modo Barranco.
-- Se mantiene sin tarifa final: cada propuesta se cotiza manualmente según personas, horario, equipos, comida, limpieza, apoyo y estado final.
-- Enfocado primero en personas que ya vivieron el espacio con cuidado y quieren volver.
+Por eso, cada encuentro se conversa caso por caso. Si la idea va bien con el lugar, buscamos la forma. Si necesita ajustes, los decimos. Si no es buen momento o no encaja con el espacio, también lo diremos con claridad.

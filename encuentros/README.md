@@ -2,6 +2,7 @@
 layout: encuentros
 title: Organiza tu encuentro en el Barranco
 description: "Un espacio cultural alternativo en Mallasa para encuentros, celebraciones, talleres, cine, yoga, musica, comida y propuestas de comunidades."
+permalink: /encuentros/
 canonical_url: "https://barranco-life.github.io/Barranco/encuentros/"
 og_title: Organiza tu encuentro en el Barranco
 og_description: "Un espacio cultural alternativo en Mallasa para encuentros, celebraciones, talleres, cine, yoga, musica, comida y propuestas de comunidades."

@@ -294,6 +294,20 @@
           grid-row: span 2;
         }
       }
+
+      @media (max-width: 720px) {
+        .hero__content,
+        .wrap {
+          width: min(100%, 375px);
+          margin-left: 0;
+          margin-right: 0;
+        }
+
+        .hero__content h1 {
+          max-width: 335px;
+          font-size: clamp(1.95rem, 8vw, 2.35rem);
+        }
+      }
     </style>
   </head>
   <body>

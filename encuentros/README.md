@@ -3,7 +3,11 @@ layout: encuentros
 title: Organiza tu encuentro en el Barranco
 description: "Un espacio cultural alternativo en Mallasa para encuentros, celebraciones, talleres, cine, yoga, musica, comida y propuestas de comunidades."
 permalink: /encuentros/
+lang: es
 canonical_url: "https://barranco-life.github.io/Barranco/encuentros/"
+alternate_es_url: "https://barranco-life.github.io/Barranco/encuentros/"
+alternate_en_url: "https://barranco-life.github.io/Barranco/encuentros/en/"
+og_locale: es_BO
 og_title: Organiza tu encuentro en el Barranco
 og_description: "Un espacio cultural alternativo en Mallasa para encuentros, celebraciones, talleres, cine, yoga, musica, comida y propuestas de comunidades."
 og_image: "https://barranco-life.github.io/Barranco/assets/images/encuentros/encuentros-og-1200x630.jpg"
@@ -28,7 +32,7 @@ og_image: "https://barranco-life.github.io/Barranco/assets/images/encuentros/enc
 
 <section class="intro section">
   <div class="wrap">
-    <p class="intro__text">El Barranco es un espacio cultural alternativo en Mallasa: jardín, casa, vistas, barra, fuego, música, cine, yoga, comida, conversación y gente que llega con ganas de hacer algo bonito.</p>
+    <p class="intro__text">El Barranco es un espacio cultural alternativo en Mallasa: jardín, casa, vistas, barra, fogata, música, cine, yoga, comida, conversación y gente que llega con ganas de hacer algo bonito.</p>
     <p class="intro__text">Si ya viviste algo aquí y pensaste en tu familia, tus amistades, tu colectivo o tu comunidad, esta página es para empezar a imaginarlo.</p>
 
     <div class="triad" aria-label="Resumen para organizar un encuentro">

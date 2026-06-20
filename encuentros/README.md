@@ -1,127 +1,166 @@
-# Cómo hacer tu encuentro en el Barranco
+---
+layout: encuentros
+title: Organiza tu encuentro en el Barranco
+description: "Un espacio cultural alternativo en Mallasa para encuentros, celebraciones, talleres, cine, yoga, musica, comida y propuestas de comunidades."
+canonical_url: "https://barranco-life.github.io/Barranco/encuentros/"
+og_title: Organiza tu encuentro en el Barranco
+og_description: "Un espacio cultural alternativo en Mallasa para encuentros, celebraciones, talleres, cine, yoga, musica, comida y propuestas de comunidades."
+og_image: "https://barranco-life.github.io/Barranco/assets/images/encuentros/encuentros-og-1200x630.jpg"
+---
 
-El Barranco es un espacio cultural alternativo en Mallasa: jardín, casa, vistas, barra, fuego, música, cine, yoga, comida, conversación y gente que llega con ganas de hacer algo bonito.
+{% assign whatsapp_url = "https://wa.me/59172041572?text=Hola%20Ernesto%2C%20quiero%20hacer%20un%20encuentro%20en%20el%20Barranco.%0A%0AIdea%3A%0AFecha%20u%20horario%20aproximado%3A%0ACantidad%20de%20personas%3A%0AQu%C3%A9%20necesitar%C3%ADamos%20del%20Barranco%3A" %}
 
-Cuando hablamos de encuentros en *“modo Barranco”*, no pensamos solo en alquilar un espacio y entregar una llave. Pensamos en una forma más viva de usarlo: con libertad, confianza, cuidado y una regla simple:
+<section class="hero" aria-labelledby="encuentros-title">
+  <picture>
+    <source media="(max-width: 720px)" type="image/webp" srcset="{{ '/assets/images/encuentros/encuentros-hero-mobile-1200x1500.webp' | relative_url }}">
+    <source media="(max-width: 720px)" srcset="{{ '/assets/images/encuentros/encuentros-hero-mobile-1200x1500.jpg' | relative_url }}">
+    <source type="image/webp" srcset="{{ '/assets/images/encuentros/encuentros-hero-desktop-1600x900.webp' | relative_url }}">
+    <img src="{{ '/assets/images/encuentros/encuentros-hero-desktop-1600x900.jpg' | relative_url }}" alt="Grupo reunido en el jardín del Barranco al atardecer." width="1600" height="900">
+  </picture>
+  <div class="hero__content">
+    <h1 id="encuentros-title">Tu grupo también puede encontrarse en el Barranco</h1>
+    <p class="hero__lead">Cumpleaños, comidas, talleres, cine, yoga, música o una idea que todavía no tiene nombre.</p>
+    <a class="button" href="{{ whatsapp_url }}">Cuéntanos tu idea por WhatsApp</a>
+    <p class="hero__support">No tiene que estar resuelta. La pensamos juntos.</p>
+  </div>
+</section>
 
-> dejar el Barranco igual o mejor de como lo encontramos.
+<section class="intro section">
+  <div class="wrap">
+    <p class="intro__text">El Barranco es un espacio cultural alternativo en Mallasa: jardín, casa, vistas, barra, fuego, música, cine, yoga, comida, conversación y gente que llega con ganas de hacer algo bonito.</p>
+    <p class="intro__text">Si ya viviste algo aquí y pensaste en tu familia, tus amistades, tu colectivo o tu comunidad, esta página es para empezar a imaginarlo.</p>
 
-Este documento es una base v0.1 para personas, grupos, familias, colectivos o comunidades que quieren celebrar algo, cocinar, compartir música, hacer un taller, proyectar una película, organizar un cumpleaños, abrir una práctica o proponer un encuentro que resuene con el lugar.
+    <div class="triad" aria-label="Resumen para organizar un encuentro">
+      <section class="triad__item">
+        <h2>Qué puede pasar aquí</h2>
+        <ul>
+          <li>una comida, cumpleaños, despedida o bienvenida;</li>
+          <li>un taller, práctica, conversación o laboratorio creativo;</li>
+          <li>yoga, movimiento o bienestar;</li>
+          <li>cine al aire libre o bajo techo;</li>
+          <li>música, escucha, DJ o sonido coordinado;</li>
+          <li>una propuesta nueva que todavía no tiene nombre.</li>
+        </ul>
+      </section>
+      <section class="triad__item">
+        <h2>Qué es el “modo Barranco”</h2>
+        <p>No pensamos solo en alquilar un espacio y entregar una llave. Pensamos en una forma más viva de usarlo: con libertad, confianza y cuidado.</p>
+      </section>
+      <section class="triad__item">
+        <h2>Cómo empezar</h2>
+        <p>Escríbenos qué quieren hacer, cuándo, cuántas personas podrían venir y qué necesitarían del Barranco.</p>
+      </section>
+    </div>
+  </div>
+</section>
 
-Si ya conoces el Barranco y quieres volver con tu grupo, puedes ir directo a [Si ya viniste y quieres volver](#si-ya-viniste-y-quieres-volver). Si estás imaginando algo más grande, revisa también [Para encuentros más grandes](#para-encuentros-más-grandes).
+<section class="section">
+  <div class="wrap image-band">
+    <figure>
+      <picture>
+        <source type="image/webp" srcset="{{ '/assets/images/encuentros/encuentros-comunidad-1200x900.webp' | relative_url }}">
+        <img src="{{ '/assets/images/encuentros/encuentros-comunidad-1200x900.jpg' | relative_url }}" alt="Personas reunidas en círculo en el exterior del Barranco." width="1200" height="900" loading="lazy">
+      </picture>
+      <figcaption>El Barranco funciona mejor cuando cada grupo trae una energía propia y cuida el lugar que recibe.</figcaption>
+    </figure>
+    <figure>
+      <picture>
+        <source type="image/webp" srcset="{{ '/assets/images/encuentros/encuentros-cine-1200x900.webp' | relative_url }}">
+        <img src="{{ '/assets/images/encuentros/encuentros-cine-1200x900.jpg' | relative_url }}" alt="Proyección de cine con público en el Barranco." width="1200" height="900" loading="lazy">
+      </picture>
+      <figcaption>Cine, música, comida, conversación o una práctica sencilla pueden convivir con acuerdos claros.</figcaption>
+    </figure>
+  </div>
+</section>
 
-## Qué puede pasar aquí
+<section class="section">
+  <div class="wrap content">
+    <h2>El “modo Barranco”</h2>
 
-Algunas posibilidades:
+    <p>La regla simple es:</p>
 
-- encuentros entre amistades, familias, colectivos o comunidades;
-- cumpleaños, despedidas, bienvenidas y celebraciones;
-- comidas compartidas, parrilla o cocina coordinada;
-- talleres, clases, prácticas o laboratorios creativos;
-- yoga, bienestar, movimiento o conversación;
-- cine al aire libre o bajo techo;
-- música, sesiones de escucha, DJ o sonido coordinado;
-- exposiciones, ferias, activaciones culturales o reuniones especiales;
-- ideas nuevas que todavía no tienen nombre.
+    <blockquote>dejar el Barranco igual o mejor de como lo encontramos.</blockquote>
 
-No todo tiene que ser un evento grande. A veces lo más Barranco es algo simple, bien cuidado y bien vivido.
+    <p>La libertad funciona mejor cuando hay acuerdos claros sobre quién recibe, qué necesita el encuentro, cómo se cuida el lugar y cómo se cierra.</p>
 
-## El *“modo Barranco”*
+    <p>No todo tiene que ser un evento grande. A veces lo más Barranco es algo simple, bien cuidado y bien vivido.</p>
 
-La idea base es que el espacio se abre con confianza, pero esa confianza necesita cuidado concreto.
+    <h2>Cómo vemos los costos</h2>
 
-Quien organiza un encuentro ayuda a que estas cosas estén claras:
+    <p>Esta es una base viva: los costos se afinan según cada encuentro.</p>
 
-- cuántas personas vienen, más o menos;
-- qué quieren hacer y en qué horario;
-- qué partes del espacio necesitan usar;
-- si habrá comida, barra, música, proyección, fuego, cocina, sonido o equipo especial;
-- quién recibe a la gente y quién ayuda a cerrar;
-- cómo se deja limpio y en orden al final;
-- qué pasa si algo se rompe, se pierde o queda pendiente.
+    <p>Cada encuentro puede necesitar cosas distintas. Por eso, antes de cerrar algo, preferimos conversar y preparar una propuesta personalizada según el caso.</p>
 
-La libertad funciona mejor cuando hay acuerdos simples.
+    <p>Los costos, depósitos o apoyos pueden variar según:</p>
 
-## Cómo vemos los costos
+    <ul>
+      <li>cantidad de personas;</li>
+      <li>horario y duración;</li>
+      <li>uso de cocina, barra, baños, jardín, salón, fogata u otros espacios;</li>
+      <li>sonido, proyector, luces, mesas, sillas u otros equipos;</li>
+      <li>comida, bebidas o barra;</li>
+      <li>limpieza antes o después;</li>
+      <li>apoyo de una persona del Barranco durante el encuentro;</li>
+      <li>nivel de preparación que necesita el espacio;</li>
+      <li>estado final en el que queda todo.</li>
+    </ul>
 
-Esta es una base viva: los costos se afinan según cada encuentro.
+    <p>Es una forma de cuidar que el encuentro funcione sin cargarle al espacio costos invisibles.</p>
 
-Cada encuentro puede necesitar cosas distintas. Por eso, antes de cerrar algo, preferimos conversar y preparar una propuesta personalizada según el caso.
+    <h2>Si ya viniste y quieres volver</h2>
 
-Los costos, depósitos o apoyos pueden variar según:
+    <p>Si ya conoces el Barranco y quieres volver con tu grupo, ese es un buen punto de partida: hayas venido como visitante, cliente, tallerista, artista, amigo de la casa o parte de una comunidad.</p>
 
-- cantidad de personas;
-- horario y duración;
-- uso de cocina, barra, baños, jardín, salón, fogata u otros espacios;
-- sonido, proyector, luces, mesas, sillas u otros equipos;
-- comida, bebidas o barra;
-- limpieza antes o después;
-- apoyo de una persona del Barranco durante el encuentro;
-- nivel de preparación que necesita el espacio;
-- estado final en el que queda todo.
+    <p>Con una idea inicial podemos responder mejor y armar una propuesta concreta.</p>
 
-Es una forma de cuidar que el encuentro funcione sin cargarle al espacio costos invisibles.
+    <h2>Para encuentros más grandes</h2>
 
-## Si ya viniste y quieres volver
+    <p>El Barranco también recibe encuentros más grandes: despedidas, talleres, música, comida, cine, yoga, cumpleaños o activaciones con más gente. Solo necesitan un poco más de forma.</p>
 
-Si ya conoces el Barranco y quieres volver con tu grupo, ese es un buen punto de partida: hayas venido como visitante, cliente, tallerista, artista, amigo de la casa o parte de una comunidad.
+    <p>En esos casos conviene definir:</p>
 
-Escríbenos algo simple:
+    <ul>
+      <li>propósito del encuentro;</li>
+      <li>número estimado de personas;</li>
+      <li>horarios de armado, llegada, actividad y cierre;</li>
+      <li>necesidades técnicas;</li>
+      <li>responsables de comida, barra, limpieza y cierre;</li>
+      <li>comunicación pública o privada;</li>
+      <li>presupuesto disponible;</li>
+      <li>nivel de apoyo que se espera del Barranco.</li>
+    </ul>
 
-- qué quieren hacer;
-- qué día u horario están pensando;
-- cuántas personas podrían venir;
-- qué necesitarían del espacio;
-- qué podrían resolver ustedes;
-- qué apoyo esperan del Barranco.
+    <p>Mientras más claro esté eso, más fácil es cuidar la experiencia sin volverla rígida.</p>
 
-Con eso podemos responder mejor y armar una propuesta concreta.
+    <h2>Cómo proponernos una idea</h2>
 
-## Para encuentros más grandes
+    <p>Puedes escribirnos con este formato:</p>
 
-El Barranco también recibe encuentros más grandes: despedidas, talleres, música, comida, cine, yoga, cumpleaños o activaciones con más gente. Solo necesitan un poco más de forma.
-
-En esos casos conviene definir:
-
-- propósito del encuentro;
-- número estimado de personas;
-- horarios de armado, llegada, actividad y cierre;
-- necesidades técnicas;
-- responsables de comida, barra, limpieza y cierre;
-- comunicación pública o privada;
-- presupuesto disponible;
-- nivel de apoyo que se espera del Barranco.
-
-Mientras más claro esté eso, más fácil es cuidar la experiencia sin volverla rígida.
-
-## Cómo proponernos una idea
-
-Puedes escribirnos con este formato:
-
-```text
-Quiero hacer un encuentro en Barranco.
+    <pre><code>Quiero hacer un encuentro en el Barranco.
 
 Idea:
-Fecha tentativa:
-Horario:
-Cantidad aproximada de personas:
-Qué partes del espacio usaríamos:
-Comida / barra / música / sonido / proyección:
-Qué resolvemos nosotros:
-Qué necesitaríamos del Barranco:
-Algo importante a cuidar:
-```
+Fecha u horario aproximado:
+Cantidad de personas:
+Qué necesitaríamos del Barranco:</code></pre>
 
-No tiene que estar perfecto. Sirve para empezar la conversación.
+    <p>No tiene que estar perfecto. Sirve para empezar la conversación.</p>
 
-## Cómo escribirnos
+    <div class="cta-panel">
+      <p><strong>Cuéntanos tu idea por WhatsApp.</strong></p>
+      <p>No tiene que estar resuelta. La pensamos juntos.</p>
+      <a class="button" href="{{ whatsapp_url }}">Cuéntanos tu idea por WhatsApp</a>
+    </div>
 
-Por ahora puedes escribirnos por WhatsApp: [abrir conversación](https://wa.me/59172041572?text=Hola%20Ernesto%2C%20quiero%20hacer%20un%20encuentro%20en%20el%20Barranco.%20Te%20cuento%20mi%20idea%3A)
+    <h2>Acuerdo básico</h2>
 
-Cuéntanos tu idea con el formato de arriba y te respondemos para armar una propuesta personalizada.
+    <p>Barranco puede abrirse de muchas maneras, pero no queremos que el espacio se vuelva una máquina de eventos. Queremos que siga siendo un lugar con vida, confianza y memoria.</p>
 
-## Acuerdo básico
+    <p>Por eso, cada encuentro se conversa caso por caso. Si la idea va bien con el lugar, buscamos la forma. Si necesita ajustes, los decimos. Si no es buen momento o no encaja con el espacio, también lo diremos con claridad.</p>
+  </div>
+</section>
 
-Barranco puede abrirse de muchas maneras, pero no queremos que el espacio se vuelva una máquina de eventos. Queremos que siga siendo un lugar con vida, confianza y memoria.
-
-Por eso, cada encuentro se conversa caso por caso. Si la idea va bien con el lugar, buscamos la forma. Si necesita ajustes, los decimos. Si no es buen momento o no encaja con el espacio, también lo diremos con claridad.
+<footer class="footer-note section">
+  <div class="wrap">
+    <p>Proyecto Cultural Barranco · Mallasa, La Paz</p>
+  </div>
+</footer>

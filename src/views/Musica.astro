@@ -1,0 +1,38 @@
+---
+import ActivityPage from '../components/ActivityPage.astro';
+import { wa, LINKS, type Lang } from '../i18n/site';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const es = lang === 'es';
+const img = 'assets/images/barranco/';
+---
+<ActivityPage
+  lang={lang} path="musica/" kind={es ? 'Música' : 'Music'} kindClass="kind-music"
+  title={es ? 'Música en vivo' : 'Live music'}
+  description={es ? 'Conciertos en el Barranco, Mallasa: bandas de La Paz y de otras ciudades, al aire libre.' : 'Concerts at Barranco, Mallasa: bands from La Paz and other cities, outdoors.'}
+  lead={es ? 'Bandas y artistas de La Paz y de otras ciudades: rock, reggae, soul, funk, jazz, música electrónica y más.' : 'Bands and artists from La Paz and other cities: rock, reggae, soul, funk, jazz, electronic music and more.'}
+  hero={img + 'musica-parrillero-1200.jpg'}
+  heroAlt={es ? 'Concierto bajo el techo de teja del parrillero, lleno de público.' : 'A concert under the tiled roof of the stage area, full of people.'}
+  photos={[
+    [img + 'musica-escenario-1200.jpg', es ? 'Músico con chelo en el escenario, con luces violetas.' : 'A cellist on stage under violet lights.'],
+    [img + 'parrillero-anochecer-1200.jpg', es ? 'El parrillero al anochecer, con luces y público.' : 'The stage area at dusk, with lights and audience.'],
+    [img + 'musica-electronica-1200.jpg', es ? 'Una noche de música electrónica en la sala.' : 'An electronic music night indoors.'],
+    [img + 'musica-noche-800.jpg', es ? 'Público de espaldas en un concierto nocturno.' : 'The audience from behind at a night concert.'],
+  ]}
+  actions={[
+    { label: es ? 'Próximas fechas en Instagram' : 'Upcoming dates on Instagram', href: LINKS.instagram },
+    { label: es ? '¿Tocas? Propón una fecha' : 'Do you play? Propose a date', href: wa('ernesto', es ? 'Hola, quiero proponer un concierto en el Barranco.\n\nArtista o banda:\nEstilo:\nFechas posibles:\nLink a tu música:' : 'Hi, I would like to propose a concert at Barranco.\n\nArtist or band:\nStyle:\nPossible dates:\nLink to your music:'), ghost: true },
+  ]}
+>
+  {es ? (
+    <>
+      <p>Los conciertos son casi siempre al aire libre, bajo el techo de teja del parrillero o en el jardín, con la montaña de fondo. Hay fogata, barra y lugar para sentarse.</p>
+      <p><strong>Entrada:</strong> libre. En los conciertos suele haber un cover que va a los artistas, y se pide solo a quienes se quedan.</p>
+    </>
+  ) : (
+    <>
+      <p>Concerts are almost always outdoors, under the tiled roof of the stage area or in the garden, with the mountains behind. There is a fire, a bar and places to sit.</p>
+      <p><strong>Entry:</strong> free. At concerts there is usually a cover that goes to the artists, asked only of those who stay.</p>
+    </>
+  )}
+</ActivityPage>

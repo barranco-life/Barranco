@@ -1,0 +1,12 @@
+---
+// i18n: bilingual (one 404 page for the whole site).
+import Base from '../layouts/Base.astro';
+import { href } from '../i18n/site';
+---
+<Base lang="es" path="" title="Página no encontrada · Page not found" description="Esta página no existe. This page does not exist.">
+  <section class="page-head"><div class="wrap">
+    <h1>404</h1>
+    <p class="lead">Esta página no existe. <a href={href('es')}>Volver al inicio</a>.</p>
+    <p class="lead" lang="en">This page does not exist. <a href={href('en')}>Back to the home page</a>.</p>
+  </div></section>
+</Base>

@@ -1,8 +1,0 @@
-theme: jekyll-theme-primer
-url: "https://barranco-life.github.io"
-baseurl: "/Barranco"
-lang: es
-title: Barranco
-
-# Main contact (same number as the encuentros page). Used by _layouts/barranco.html.
-barranco_whatsapp: "https://wa.me/59172041572?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20del%20Barranco."

@@ -1,0 +1,90 @@
+---
+import Base from '../layouts/Base.astro';
+import { wa, type Lang } from '../i18n/site';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const es = lang === 'es';
+// Terms: Galería README + LC §20 (deposit 200 Bs refundable, proposals by WhatsApp; Ernesto 2026-09-23).
+const c = es ? {
+  title: 'Galería Barranco', description: 'Una sala viva para artes visuales en Mallasa, La Paz. Recibimos propuestas de artistas, colectivos, estudiantes y universidades.',
+  lead: 'Una sala viva para artes visuales dentro del Barranco: más cercana, más abierta y conectada con la naturaleza y con la comunidad que ya habita el lugar.',
+  now: 'Ahora: la sala está abierta a nuevas propuestas. Si tienes una muestra en mente, cuéntanos.',
+  lookT: 'Qué buscamos',
+  look: [
+    'Queremos que siempre haya algo para ver en el Barranco, incluso cuando no hay evento: una muestra, una obra, una excusa para entrar y quedarse un rato.',
+    'Recibimos propuestas de artistas con trayectoria, emergentes, estudiantes, colectivos, universidades e instituciones educativas. Artes visuales en sentido amplio: pintura, dibujo, fotografía, grabado, textil, instalación, escultura, obra experimental o propuestas mixtas.',
+    'No queremos competir con otras galerías, sino sumar al ecosistema cultural de La Paz desde otro lugar.',
+  ],
+  howT: 'Cómo funciona',
+  terms: [
+    ['Duración', 'Cada exposición dura entre 3 y 6 semanas, según la disponibilidad y el tipo de propuesta.'],
+    ['Depósito', '200 Bs, reembolsable, para el cuidado del espacio y posibles reparaciones menores.'],
+    ['Montaje', 'Cada artista o colectivo coordina el montaje y el desmontaje con nosotros. Todo se deja igual o mejor de como se encontró.'],
+    ['Ventas', 'Las ventas son principalmente para quienes exponen. Si el Barranco participa en la venta (catálogo, atención, intermediación), se acuerda antes un aporte o comisión.'],
+    ['Difusión', 'Te apoyamos con difusión en nuestras redes y canales de la comunidad.'],
+    ['Inauguración', 'Se puede organizar una inauguración o clausura como evento coproducido, con acuerdos claros de logística y aportes.'],
+    ['Uso compartido', 'La sala también recibe usos compatibles, como yoga o talleres, siempre cuidando las obras según su fragilidad y ubicación.'],
+    ['Exteriores', 'Algunas propuestas pueden extenderse a los jardines, con acuerdos adicionales de seguridad, clima y montaje.'],
+  ],
+  proposeT: 'Cómo proponer una exposición', propose: 'Escríbenos por WhatsApp con este formato. No tiene que estar perfecto: sirve para empezar la conversación.',
+  template: 'Hola, quiero proponer una exposición en Galería Barranco.\n\nNombre o colectivo:\nQué tipo de obra:\nCuántas piezas (aprox.):\nFechas que te interesan:\nLink a tu obra (Instagram, portafolio):',
+  note: 'Proponer no garantiza una fecha, pero nos permite revisar tu propuesta con seriedad y responderte con una ruta clara.',
+  cta: 'Proponer por WhatsApp',
+} : {
+  title: 'Barranco Gallery', description: 'A living room for visual arts in Mallasa, La Paz. We welcome proposals from artists, collectives, students and universities.',
+  lead: 'A living room for visual arts inside Barranco: closer, more open, and connected with nature and with the community that already lives the place.',
+  now: 'Now: the room is open to new proposals. If you have a show in mind, tell us.',
+  lookT: 'What we are looking for',
+  look: [
+    'We want there to always be something to see at Barranco, even when there is no event: a show, a work, a reason to come in and stay a while.',
+    'We welcome proposals from established and emerging artists, students, collectives, universities and schools. Visual arts in the broadest sense: painting, drawing, photography, printmaking, textile, installation, sculpture, experimental or mixed work.',
+    'We do not want to compete with other galleries, but to add to La Paz’s cultural ecosystem from a different place.',
+  ],
+  howT: 'How it works',
+  terms: [
+    ['Length', 'Each show runs for 3 to 6 weeks, depending on availability and the kind of proposal.'],
+    ['Deposit', '200 Bs, refundable, for the care of the space and possible minor repairs.'],
+    ['Hanging', 'Each artist or collective coordinates hanging and taking down with us. Everything is left as good as or better than it was found.'],
+    ['Sales', 'Sales go mainly to the exhibitors. If Barranco takes part in selling (catalogue, attention, intermediation), a contribution or commission is agreed beforehand.'],
+    ['Promotion', 'We support your show on our social media and community channels.'],
+    ['Opening', 'An opening or closing can be organised as a co-produced event, with clear agreements on logistics and contributions.'],
+    ['Shared use', 'The room also hosts compatible uses such as yoga or workshops, always caring for the works according to their fragility and placement.'],
+    ['Outdoors', 'Some proposals can extend into the gardens, with extra agreements on safety, weather and installation.'],
+  ],
+  proposeT: 'How to propose a show', propose: 'Message us on WhatsApp in this format. It does not need to be perfect: it is how the conversation starts.',
+  template: 'Hi, I would like to propose a show at Barranco Gallery.\n\nName or collective:\nKind of work:\nNumber of pieces (approx.):\nDates you are interested in:\nLink to your work (Instagram, portfolio):',
+  note: 'Proposing does not guarantee a date, but it lets us review your proposal seriously and answer you with a clear path.',
+  cta: 'Propose on WhatsApp',
+};
+---
+<Base lang={lang} path="galeria/" title={c.title} description={c.description}>
+  <section class="page-head kind-gallery">
+    <div class="wrap">
+      <p class="eyebrow">{es ? 'Galería' : 'Gallery'}</p>
+      <h1>{c.title}</h1>
+      <p class="lead">{c.lead}</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="wrap prose">
+      <p class="notice">{c.now}</p>
+      <h2>{c.lookT}</h2>
+      {c.look.map((p) => <p>{p}</p>)}
+      <h2>{c.howT}</h2>
+    </div>
+    <div class="wrap">
+      <dl class="facts">
+        {c.terms.map(([k, v]) => <div class="fact"><dt>{k}</dt><dd>{v}</dd></div>)}
+      </dl>
+    </div>
+  </section>
+  <section class="section section--band">
+    <div class="wrap prose">
+      <h2>{c.proposeT}</h2>
+      <p>{c.propose}</p>
+      <pre class="template">{c.template.split('\n').slice(2).join('\n')}</pre>
+      <p class="muted">{c.note}</p>
+      <div class="actions"><a class="button" href={wa('ernesto', c.template)}>{c.cta}</a></div>
+    </div>
+  </section>
+</Base>

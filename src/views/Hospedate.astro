@@ -1,0 +1,42 @@
+---
+import Base from '../layouts/Base.astro';
+import { asset, wa, LINKS, type Lang } from '../i18n/site';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const es = lang === 'es';
+// Airbnb listing active (LC §20, Ernesto 2026-09-23). Posture: ER Projects/Barranco/Airbnb/README.md.
+const c = es ? {
+  title: 'Hospédate en el Barranco', description: 'Alojamiento dentro del Proyecto Cultural Barranco, en Mallasa, a 420 m del Valle de la Luna.',
+  lead: 'Una estadía dentro del proyecto cultural: jardín, atardeceres sobre el Valle de la Luna y, si tu visita coincide con una actividad, música, cine o yoga a unos pasos.',
+  body: 'El alojamiento se reserva por Airbnb. Si tienes preguntas antes de reservar, escríbenos.',
+  cta: 'Ver el alojamiento en Airbnb', ask: 'Preguntar por WhatsApp', waText: 'Hola, tengo una pregunta sobre el alojamiento en el Barranco.',
+  alt: 'El jardín del Barranco junto a la casita blanca.',
+} : {
+  title: 'Stay at Barranco', description: 'A stay inside the Barranco Cultural Project in Mallasa, 420 m from the Valle de la Luna.',
+  lead: 'A stay inside the cultural project: a garden, sunsets over the Valle de la Luna and, if your visit coincides with an activity, music, cinema or yoga a few steps away.',
+  body: 'The stay is booked through Airbnb. If you have questions before booking, message us.',
+  cta: 'See the stay on Airbnb', ask: 'Ask on WhatsApp', waText: 'Hi, I have a question about staying at Barranco.',
+  alt: 'The Barranco garden next to the small white house.',
+};
+---
+<Base lang={lang} path="hospedate/" title={c.title} description={c.description} image="assets/images/barranco/valle-de-la-luna-1600.jpg">
+  <section class="page-head">
+    <div class="wrap">
+      <p class="eyebrow">{es ? 'Hospédate' : 'Stay'}</p>
+      <h1>{c.title}</h1>
+      <p class="lead">{c.lead}</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="wrap split">
+      <div class="prose">
+        <p>{c.body}</p>
+        <div class="actions">
+          <a class="button" href={LINKS.airbnb}>{c.cta}</a>
+          <a class="button button--ghost" href={wa('mj', c.waText)}>{c.ask}</a>
+        </div>
+      </div>
+      <img src={asset('assets/images/barranco/jardin-casita-800.jpg')} alt={c.alt} width="800" height="600" loading="lazy" />
+    </div>
+  </section>
+</Base>

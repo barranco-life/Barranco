@@ -1,0 +1,17 @@
+---
+// Encuentros: Ernesto's test page, target of the printed QR codes. Text ported verbatim from the
+// Jekyll version (encuentros/README.md and README.en.md, commit cb47131); only the frame changed.
+import Base from '../layouts/Base.astro';
+import { asset, type Lang } from '../i18n/site';
+import es from './encuentros.es.html?raw';
+import en from './encuentros.en.html?raw';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const html = (lang === 'es' ? es : en).replaceAll('__BASE__', asset(''));
+const meta = lang === 'es'
+  ? { title: 'Organiza tu encuentro en el Barranco', description: 'Un espacio cultural alternativo en Mallasa para encuentros, celebraciones, talleres, cine, yoga, música, comida y propuestas de comunidades.' }
+  : { title: 'Organize your gathering at Barranco', description: 'An alternative cultural space in Mallasa for gatherings, celebrations, workshops, cinema, yoga, music, food, and community-led ideas.' };
+---
+<Base lang={lang} path="encuentros/" title={meta.title} description={meta.description} image="assets/images/encuentros/encuentros-og-1200x630.jpg">
+  <div class="encuentros kind-gatherings" set:html={html} />
+</Base>

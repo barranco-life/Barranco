@@ -1,0 +1,106 @@
+---
+import Base from '../layouts/Base.astro';
+import { asset, wa, EMAIL, LINKS, type Lang } from '../i18n/site';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const es = lang === 'es';
+// Facts: Barranco LC §20 (hours, travel times, getting back, costs), confirmed by Ernesto 2026-09-23.
+const c = es ? {
+  title: 'Visítanos', description: 'Cómo llegar al Barranco en Mallasa, horarios, cómo volver, qué hay y qué traer.',
+  eyebrow: 'Mallasa · La Paz', lead: 'El Barranco está en Mallasa, al sur de La Paz, a 420 metros del Valle de la Luna.',
+  hoursT: 'Horario', hours: 'Sábados y domingos desde las 4:20pm. Cerramos usualmente a las 9pm (antes si no hay gente, 11pm como máximo). Otros días abrimos cuando hay una actividad anunciada en Instagram; si quieres venir otro día, escríbenos antes.',
+  costT: 'Entrada', cost: 'Libre. En los conciertos suele haber un cover que va a los artistas; se pide solo si te quedas.',
+  getT: 'Cómo llegar', addr: 'Calle Las Tunas 224, entre calles 3 y 4, Mallasa, La Paz.', map: 'Abrir en Google Maps',
+  bus: 'En transporte público: unos 40 minutos desde el centro y 20 desde la Zona Sur.',
+  taxi: 'En taxi: unos 30 minutos desde el centro y 15 desde la Zona Sur.',
+  backT: 'Cómo volver',
+  back: 'Hay transporte público desde la avenida hasta las 11pm, y PumaKatari los fines de semana. Radio Taxi Mallasa atiende las 24 horas: si quieres, te ayudamos a llamarlo.',
+  hereT: 'Qué hay', here: ['WiFi gratuito y enchufes', 'Juegos de mesa', 'Cervezas artesanales, vinos y licores bolivianos, kombuchas', 'Bebidas calientes, pizzas, snacks y productos orgánicos locales', 'Jardín, fogata y vista a las formaciones del Valle de la Luna'],
+  bringT: 'Qué traer', bring: ['Abrigo: casi todo es al aire libre y refresca cuando baja el sol.', 'Zapatos cómodos: hay gradas y desniveles.', 'Tu mascota, si quieres: es bienvenida.'],
+  askT: '¿Preguntas?', ask: 'Escríbenos antes de venir:',
+  waText: 'Hola, quiero visitar el Barranco. Tengo una pregunta:',
+  photos: [
+    ['entrada-1200.jpg', 'La entrada del Barranco, con el letrero y las luces colgantes.'],
+    ['gradas-1200.jpg', 'El camino con gradas que baja a la zona baja.'],
+    ['zona-baja-anochecer-1200.jpg', 'La zona baja al anochecer, con el círculo de la fogata.'],
+  ],
+} : {
+  title: 'Visit', description: 'How to get to Barranco in Mallasa, opening hours, getting back, what is there and what to bring.',
+  eyebrow: 'Mallasa · La Paz', lead: 'Barranco is in Mallasa, in the south of La Paz, 420 metres from the Valle de la Luna (Moon Valley).',
+  hoursT: 'Opening hours', hours: 'Saturdays and Sundays from 4:20pm. We usually close at 9pm (earlier if it is quiet, 11pm at the latest). On other days we open when an activity is announced on Instagram; if you want to come another day, message us first.',
+  costT: 'Entry', cost: 'Free. At concerts there is usually a cover that goes to the artists; it is asked only if you stay.',
+  getT: 'Getting here', addr: 'Calle Las Tunas 224, between streets 3 and 4, Mallasa, La Paz.', map: 'Open in Google Maps',
+  bus: 'By public transport: about 40 minutes from the city centre and 20 from the Zona Sur.',
+  taxi: 'By taxi: about 30 minutes from the city centre and 15 from the Zona Sur.',
+  backT: 'Getting back',
+  back: 'Public transport runs from the main avenue until 11pm, and the PumaKatari bus on weekends. Radio Taxi Mallasa works 24 hours: we are happy to call one for you.',
+  hereT: 'What’s here', here: ['Free Wi-Fi and power outlets', 'Board games', 'Craft beers, Bolivian wines and spirits, kombuchas', 'Hot drinks, pizzas, snacks and local organic products', 'Garden, fire circle and views of the Valle de la Luna formations'],
+  bringT: 'What to bring', bring: ['A warm layer: almost everything is outdoors and it gets cool when the sun goes down.', 'Comfortable shoes: there are steps and uneven ground.', 'Your pet, if you like: pets are welcome.'],
+  askT: 'Questions?', ask: 'Message us before you come:',
+  waText: 'Hi, I would like to visit Barranco. I have a question:',
+  photos: [
+    ['entrada-1200.jpg', 'The Barranco entrance, with its sign and string lights.'],
+    ['gradas-1200.jpg', 'The path with steps down to the lower area.'],
+    ['zona-baja-anochecer-1200.jpg', 'The lower area at dusk, with the fire circle.'],
+  ],
+};
+---
+<Base lang={lang} path="visitanos/" title={c.title} description={c.description} image="assets/images/barranco/entrada-1200.jpg">
+  <section class="page-head">
+    <div class="wrap">
+      <p class="eyebrow">{c.eyebrow}</p>
+      <h1>{c.title}</h1>
+      <p class="lead">{c.lead}</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <dl class="facts">
+        <div class="fact"><dt>{c.hoursT}</dt><dd>{c.hours}</dd></div>
+        <div class="fact"><dt>{c.costT}</dt><dd>{c.cost}</dd></div>
+        <div class="fact"><dt>{c.getT}</dt><dd>{c.addr} <a href={LINKS.map}>{c.map}</a></dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="section section--band">
+    <div class="wrap split">
+      <div class="prose">
+        <h2>{c.getT}</h2>
+        <p>{c.addr} <a href={LINKS.map}>{c.map}</a></p>
+        <p>{c.bus}</p>
+        <p>{c.taxi}</p>
+        <h2>{c.backT}</h2>
+        <p>{c.back}</p>
+      </div>
+      <img src={asset('assets/images/barranco/' + c.photos[0][0])} alt={c.photos[0][1]} width="1200" height="900" loading="lazy" />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap split">
+      <div class="prose">
+        <h2>{c.hereT}</h2>
+        <ul>{c.here.map((x) => <li>{x}</li>)}</ul>
+      </div>
+      <div class="prose">
+        <h2>{c.bringT}</h2>
+        <ul>{c.bring.map((x) => <li>{x}</li>)}</ul>
+        <h2>{c.askT}</h2>
+        <p>{c.ask}</p>
+        <div class="actions">
+          <a class="button" href={wa('mj', c.waText)}>WhatsApp</a>
+          <a class="button button--ghost" href={`mailto:${EMAIL[lang]}`}>{EMAIL[lang]}</a>
+        </div>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="gallery-row">
+        {c.photos.slice(1).map(([f, alt]) => (
+          <figure><img src={asset('assets/images/barranco/' + f)} alt={alt} width="1200" height="900" loading="lazy" /><figcaption>{alt}</figcaption></figure>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>

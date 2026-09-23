@@ -1,0 +1,29 @@
+---
+import ActivityPage from '../components/ActivityPage.astro';
+import { wa, LINKS, type Lang } from '../i18n/site';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const es = lang === 'es';
+const img = 'assets/images/barranco/';
+// A sample from ER Projects/Barranco/Cinema/Past y Wishlist.md (films already screened).
+const films = ['Cinema Paradiso (1988)', 'Amélie (2001)', 'El laberinto del fauno (2006)', 'Kirikou (1998)', 'Les Triplettes de Belleville (2003)', 'El Gran Hotel Budapest (2014)', 'Captain Fantastic (2016)', 'Matilda (1996)'];
+---
+<ActivityPage
+  lang={lang} path="cine/" kind="Cinema Barranco" kindClass="kind-cinema"
+  title={es ? 'Cine bajo las estrellas' : 'Cinema under the stars'}
+  description={es ? 'Cinema Barranco: funciones de cine al aire libre en Mallasa, La Paz.' : 'Cinema Barranco: outdoor film screenings in Mallasa, La Paz.'}
+  lead={es ? 'Funciones al aire libre, con mantitas y conversación: clásicos, cine de culto, animación, documental y cine para niñas, niños y jóvenes.' : 'Outdoor screenings with blankets and conversation: classics, cult films, animation, documentaries and films for children and teenagers.'}
+  hero={img + 'cine-noche-800.jpg'}
+  heroAlt={es ? 'Proyección nocturna al aire libre, con público.' : 'An outdoor night screening with an audience.'}
+  photos={[[img + 'cine-dia-1200.jpg', es ? 'La pantalla armada de día junto al parrillero.' : 'The screen set up in daylight next to the stage area.']]}
+  actions={[
+    { label: es ? 'Próximas funciones en @cinema.barranco' : 'Upcoming screenings on @cinema.barranco', href: LINKS.cinemaInstagram },
+    { label: es ? 'Reservar mesa' : 'Book a table', href: wa('mj', es ? 'Hola, quiero reservar una mesa para la función de Cinema Barranco.' : 'Hi, I would like to book a table for the Cinema Barranco screening.'), ghost: true },
+  ]}
+>
+  {es
+    ? <p>Cinema Barranco quiere una comunidad cinéfila y familiar en Mallasa: buenas películas en pantalla grande, al aire libre, y una excusa para conocer el lugar. La comunidad propone y vota las próximas funciones.</p>
+    : <p>Cinema Barranco builds a film-loving, family-friendly community in Mallasa: good films on a big screen, outdoors, and a reason to discover the place. The community proposes and votes on the next screenings.</p>}
+  <h2>{es ? 'Algunas películas que proyectamos' : 'Some films we have screened'}</h2>
+  <ul>{films.map((f) => <li>{f}</li>)}</ul>
+</ActivityPage>

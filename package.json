@@ -1,0 +1,14 @@
+{
+  "name": "barranco-site",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check:i18n": "node scripts/check-i18n.mjs",
+    "dev": "astro dev",
+    "build": "npm run check:i18n && astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "^7.3.4"
+  }
+}

@@ -1,0 +1,23 @@
+---
+import ActivityPage from '../components/ActivityPage.astro';
+import { wa, LINKS, type Lang } from '../i18n/site';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const es = lang === 'es';
+---
+<ActivityPage
+  lang={lang} path="yoga/" kind="Yoga Barranco" kindClass="kind-yoga"
+  title={es ? 'Yoga en la naturaleza' : 'Yoga in nature'}
+  description={es ? 'Yoga Barranco: prácticas de yoga al aire libre en Mallasa, La Paz, para distintos niveles.' : 'Yoga Barranco: outdoor yoga in Mallasa, La Paz, for different levels.'}
+  lead={es ? 'Hatha Yoga Iyengar y yoga tradicional al aire libre, para distintos niveles, en una comunidad cercana.' : 'Iyengar Hatha Yoga and traditional yoga outdoors, for different levels, in a close-knit community.'}
+  hero="assets/images/barranco/yoga-patio-800.jpg"
+  heroAlt={es ? 'Clase de yoga en el patio, con colchonetas y sombrillas.' : 'A yoga class in the courtyard, with mats and parasols.'}
+  actions={[
+    { label: es ? 'Horarios en Instagram' : 'Class times on Instagram', href: LINKS.instagram },
+    { label: es ? 'Preguntar por WhatsApp' : 'Ask on WhatsApp', href: wa('mj', es ? 'Hola, quiero saber de las clases de yoga en el Barranco.' : 'Hi, I would like to know about the yoga classes at Barranco.'), ghost: true },
+  ]}
+>
+  {es
+    ? <p>Una práctica clara y sin apuro para mejorar la postura, la movilidad y la fuerza, aprender a respirar y relajarse, y conectar con la naturaleza del valle. No hace falta experiencia: si nunca hiciste yoga, también es para ti.</p>
+    : <p>A clear, unhurried practice to improve posture, mobility and strength, learn to breathe and relax, and connect with the valley’s nature. No experience needed: if you have never done yoga, it is for you too.</p>}
+</ActivityPage>

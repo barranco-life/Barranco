@@ -1,0 +1,120 @@
+---
+import '../styles/site.css';
+import { NAV, UI, EMAIL, LINKS, href, asset, wa, type Lang } from '../i18n/site';
+
+interface Props {
+  lang: Lang;
+  /** Route shared by both languages, e.g. 'visitanos/' ('' for home). */
+  path: string;
+  title: string;
+  description: string;
+  image?: string;
+}
+const { lang, path, title, description, image = 'assets/images/barranco/valle-de-la-luna-1600.jpg' } = Astro.props;
+const other: Lang = lang === 'es' ? 'en' : 'es';
+const t = UI[lang];
+const site = Astro.site!;
+const abs = (l: Lang) => new URL(href(l, path), site).href;
+const fullTitle = path === '' ? title : `${title} · Barranco`;
+const current = (p: string) => path.startsWith(p);
+---
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={abs(lang)} />
+    <link rel="alternate" hreflang="es" href={abs('es')} />
+    <link rel="alternate" hreflang="en" href={abs('en')} />
+    <link rel="alternate" hreflang="x-default" href={abs('es')} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content={lang === 'es' ? 'es_BO' : 'en_US'} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={abs(lang)} />
+    <meta property="og:image" content={new URL(asset(image), site).href} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#141210" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#faf6ef" media="(prefers-color-scheme: light)" />
+    <script is:inline>
+      // Apply the saved theme before first paint; the system setting is the default.
+      try {
+        const saved = localStorage.getItem('theme');
+        if (saved === 'light' || saved === 'dark') document.documentElement.dataset.theme = saved;
+      } catch (e) {}
+    </script>
+    <script is:inline data-goatcounter="https://barranco-life.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">{t.skip}</a>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="brand" href={href(lang)} aria-label="Barranco">
+          <img src={asset('assets/images/barranco/logo-negro.png')} alt="barranco" width="1600" height="315" />
+        </a>
+        <details class="nav-menu">
+          <summary>{t.menu}</summary>
+          <nav class="site-nav" aria-label={t.menu}>
+            {NAV.map((item) => (
+              <a href={href(lang, item.path)} aria-current={current(item.path) ? 'page' : undefined}>
+                {item.label[lang]}
+              </a>
+            ))}
+          </nav>
+        </details>
+        <div class="header-tools">
+          <a class="lang-switch" href={href(other, path)} hreflang={other} lang={other} aria-label={t.langSwitchLabel}>
+            {t.langSwitch}
+          </a>
+          <button class="theme-toggle" type="button" aria-label={t.theme} title={t.theme}>
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+              <path class="sun" d="M12 4V2m0 20v-2m8-8h2M2 12h2m13.66-5.66 1.41-1.41M4.93 19.07l1.41-1.41m0-11.32L4.93 4.93m14.14 14.14-1.41-1.41M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10Z" />
+              <path class="moon" d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <img class="footer-logo" src={asset('assets/images/barranco/logo-negro.png')} alt="" width="1600" height="315" />
+        <p>{t.tagline}</p>
+        <p>{t.address} · <a href={LINKS.map}>{t.map}</a></p>
+        <p>
+          <a href={`mailto:${EMAIL[lang]}`}>{EMAIL[lang]}</a> ·
+          <a href={wa('mj', lang === 'es' ? 'Hola, quiero saber más del Barranco.' : 'Hi, I’d like to know more about Barranco.')}>{t.whatsapp}</a>
+        </p>
+        <p class="socials">
+          <a href={LINKS.instagram}>Instagram</a>
+          <a href={LINKS.facebook}>Facebook</a>
+          <a href={LINKS.tiktok}>TikTok</a>
+          <a href={LINKS.twitch}>Twitch</a>
+          <a href={LINKS.tripadvisor}>Tripadvisor</a>
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      const root = document.documentElement;
+      const system = () => (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.querySelector('.theme-toggle')?.addEventListener('click', () => {
+        const next = (root.dataset.theme || system()) === 'dark' ? 'light' : 'dark';
+        root.dataset.theme = next;
+        try { localStorage.setItem('theme', next); } catch (e) {}
+      });
+      // On wide screens the menu is always open; on phones it starts closed.
+      const menu = document.querySelector<HTMLDetailsElement>('.nav-menu');
+      const wide = matchMedia('(min-width: 900px)');
+      const sync = () => { if (menu) menu.open = wide.matches; };
+      sync();
+      wide.addEventListener('change', sync);
+    </script>
+  </body>
+</html>

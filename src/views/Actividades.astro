@@ -1,0 +1,32 @@
+---
+import Base from '../layouts/Base.astro';
+import Cards from '../components/Cards.astro';
+import { activities, moreActivities } from '../data/activities';
+import { LINKS, type Lang } from '../i18n/site';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const es = lang === 'es';
+const c = es ? {
+  title: 'Actividades', description: 'Música en vivo, cine al aire libre, yoga, galería, talleres, ferias y encuentros en el Barranco, Mallasa.',
+  lead: 'Lo que pasa en el Barranco cambia cada semana. Esto es lo que suele haber; la agenda de cada fin de semana está en Instagram.',
+  agenda: 'Ver la agenda en Instagram',
+} : {
+  title: 'What’s on', description: 'Live music, outdoor cinema, yoga, a gallery, workshops, markets and gatherings at Barranco, Mallasa.',
+  lead: 'What happens at Barranco changes every week. This is what we usually have; each weekend’s programme is on Instagram.',
+  agenda: 'See the programme on Instagram',
+};
+---
+<Base lang={lang} path="actividades/" title={c.title} description={c.description}>
+  <section class="page-head">
+    <div class="wrap">
+      <h1>{c.title}</h1>
+      <p class="lead">{c.lead}</p>
+      <div class="actions"><a class="button" href={LINKS.instagram}>{c.agenda}</a></div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="wrap">
+      <Cards items={[...activities(lang).slice(0, 5), ...moreActivities(lang)]} />
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,48 @@
+# Builds the Barranco Astro site and deploys it to GitHub Pages.
+# Same contract as the Verdecito site (ER): Astro + official Pages actions.
+# Repo setting: Settings -> Pages -> Source -> "GitHub Actions".
+# Domain move (when Ernesto decides to share): add public/CNAME with barranco.life,
+# set SITE_URL=https://barranco.life and BASE_PATH=/ below, then point DNS.
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Build (fails if a page is missing its other-language twin)
+        env:
+          SITE_URL: https://barranco-life.github.io
+          BASE_PATH: /Barranco
+        run: npm run build
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,44 @@
+---
+// Shared shape for an activity page: coloured label, title, lead, body, photos, actions.
+import Base from '../layouts/Base.astro';
+import { asset, type Lang } from '../i18n/site';
+interface Props {
+  lang: Lang;
+  path: string;
+  kind: string;
+  kindClass: string;
+  title: string;
+  description: string;
+  lead: string;
+  hero: string;
+  heroAlt: string;
+  photos?: [string, string][];
+  actions: { label: string; href: string; ghost?: boolean }[];
+}
+const p = Astro.props;
+---
+<Base lang={p.lang} path={p.path} title={p.title} description={p.description} image={p.hero}>
+  <section class={`hero hero--short ${p.kindClass}`} aria-labelledby="act-title">
+    <img src={asset(p.hero)} alt={p.heroAlt} width="1200" height="900" fetchpriority="high" />
+    <div class="hero__content">
+      <p class="eyebrow">{p.kind}</p>
+      <h1 id="act-title">{p.title}</h1>
+      <p class="lead">{p.lead}</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="wrap">
+      <div class="prose"><slot /></div>
+      <div class="actions">
+        {p.actions.map((a) => <a class={a.ghost ? 'button button--ghost' : 'button'} href={a.href}>{a.label}</a>)}
+      </div>
+      {p.photos && p.photos.length > 0 && (
+        <div class="gallery-row">
+          {p.photos.map(([f, alt]) => (
+            <figure><img src={asset(f)} alt={alt} width="1200" height="900" loading="lazy" /></figure>
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+</Base>

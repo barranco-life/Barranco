@@ -1,0 +1,28 @@
+---
+import { IG } from '../data/instagram';
+import { LINKS, type Lang } from '../i18n/site';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const date = new Date(`${IG.updated}T12:00:00`).toLocaleDateString(lang === 'es' ? 'es-BO' : 'en-US', {
+  day: 'numeric', month: 'long', year: 'numeric',
+});
+const t = {
+  es: { title: 'Lo último en Instagram', updated: `Última publicación: ${date}.`, all: 'Ver todo en Instagram' },
+  en: { title: 'Latest on Instagram', updated: `Latest post: ${date}.`, all: 'See everything on Instagram' },
+}[lang];
+---
+<section class="section section--band" id="agenda" aria-labelledby="agenda-title">
+  <div class="wrap">
+    <p class="eyebrow">@barranco.life</p>
+    <h2 id="agenda-title">{t.title}</h2>
+    <p class="muted">{t.updated} <a href={LINKS.instagram}>{t.all}</a></p>
+    <div class="ig-grid">
+      {IG.posts.map((url) => (
+        <blockquote class="instagram-media" data-instgrm-permalink={url} data-instgrm-version="14">
+          <a href={url}>{url}</a>
+        </blockquote>
+      ))}
+    </div>
+  </div>
+</section>
+<script is:inline async src="https://www.instagram.com/embed.js"></script>

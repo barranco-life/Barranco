@@ -1,0 +1,89 @@
+---
+import Base from '../layouts/Base.astro';
+import Cards from '../components/Cards.astro';
+import IgFeed from '../components/IgFeed.astro';
+import { activities } from '../data/activities';
+import { href, asset, LINKS, type Lang } from '../i18n/site';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const es = lang === 'es';
+// ES and EN copy follow the venue's bilingual interior poster (Yann Pablo), updated with LC §20.
+const c = es ? {
+  title: 'Proyecto Cultural Barranco — Mallasa, La Paz',
+  description: 'Un espacio cultural local, sin fines de lucro, al aire libre y pet-friendly en Mallasa, a 420 m del Valle de la Luna: conciertos, cine, yoga, galería, ferias y talleres.',
+  eyebrow: 'Mallasa · La Paz · a 420 m del Valle de la Luna',
+  h1: 'Un espacio cultural vivo en Mallasa',
+  lead: 'Un espacio local, sin fines de lucro, al aire libre y pet-friendly: conciertos, talleres, exposiciones, ferias, cine bajo las estrellas, yoga y mucho más.',
+  howTo: 'Cómo llegar', whatsOn: 'Qué se viene',
+  factsTitle: 'Antes de venir',
+  when: 'Cuándo', whenText: 'Sábados y domingos desde las 4:20pm, usualmente hasta las 9pm. Otros días, cuando hay una actividad anunciada.',
+  cost: 'Cuánto cuesta', costText: 'La entrada es libre. En los conciertos suele haber un cover para los artistas, que se pide solo si te quedas.',
+  where: 'Dónde', whereText: 'Calle Las Tunas 224, Mallasa: unos 40 minutos del centro y 20 de la Zona Sur en transporte público.',
+  whatTitle: 'Qué pasa aquí',
+  sunsetTitle: 'Disfruta del atardecer',
+  sunset: 'Con WiFi gratuito, enchufes, juegos de mesa, cervezas artesanales, bebidas calientes, vinos y licores bolivianos, kombuchas, pizzas y una selección de snacks y productos orgánicos locales.',
+  sunsetAlt: 'La zona baja del Barranco al anochecer, con el círculo de la fogata y luces cálidas.',
+  visit: 'Todo para tu visita',
+} : {
+  title: 'Barranco Cultural Project — Mallasa, La Paz',
+  description: 'A locally-owned, non-profit, open-air and pet-friendly cultural venue in Mallasa, 420 m from the Valle de la Luna: concerts, cinema, yoga, a gallery, markets and workshops.',
+  eyebrow: 'Mallasa · La Paz · 420 m from the Valle de la Luna',
+  h1: 'A living cultural space in Mallasa',
+  lead: 'A locally-owned, non-profit, open-air and pet-friendly venue: concerts, workshops, art exhibitions, markets, outdoor cinema, yoga classes and much more.',
+  howTo: 'Getting here', whatsOn: 'What’s coming up',
+  factsTitle: 'Before you come',
+  when: 'When', whenText: 'Saturdays and Sundays from 4:20pm, usually until 9pm. Other days, when an activity is announced.',
+  cost: 'What it costs', costText: 'Entry is free. At concerts there is usually a cover for the artists, asked only if you stay.',
+  where: 'Where', whereText: 'Calle Las Tunas 224, Mallasa: about 40 minutes from the city centre and 20 from the Zona Sur by public transport.',
+  whatTitle: 'What happens here',
+  sunsetTitle: 'Enjoy the sunset',
+  sunset: 'With free Wi-Fi, power outlets, board games, craft beers, hot drinks, Bolivian wines and spirits, kombuchas, pizzas and a selection of local organic snacks and products.',
+  sunsetAlt: 'The lower area of Barranco at dusk, with the fire circle and warm lights.',
+  visit: 'Everything for your visit',
+};
+---
+<Base lang={lang} path="" title={c.title} description={c.description}>
+  <section class="hero" aria-labelledby="home-title">
+    <img src={asset('assets/images/barranco/valle-de-la-luna-1600.jpg')} alt="" width="1600" height="1200" fetchpriority="high" />
+    <div class="hero__content">
+      <p class="eyebrow">{c.eyebrow}</p>
+      <h1 id="home-title">{c.h1}</h1>
+      <p class="lead">{c.lead}</p>
+      <div class="actions">
+        <a class="button" href={href(lang, 'visitanos/')}>{c.howTo}</a>
+        <a class="button button--ghost" href="#agenda">{c.whatsOn}</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="facts-title">
+    <div class="wrap">
+      <h2 id="facts-title">{c.factsTitle}</h2>
+      <dl class="facts">
+        <div class="fact"><dt>{c.when}</dt><dd>{c.whenText}</dd></div>
+        <div class="fact"><dt>{c.cost}</dt><dd>{c.costText}</dd></div>
+        <div class="fact"><dt>{c.where}</dt><dd>{c.whereText} <a href={LINKS.map}>Google Maps</a></dd></div>
+      </dl>
+      <p style="margin-top:16px"><a href={href(lang, 'visitanos/')}>{c.visit} →</a></p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="what-title">
+    <div class="wrap">
+      <h2 id="what-title">{c.whatTitle}</h2>
+      <Cards items={activities(lang)} />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap split">
+      <div>
+        <h2>{c.sunsetTitle}</h2>
+        <p class="lead">{c.sunset}</p>
+      </div>
+      <img src={asset('assets/images/barranco/zona-baja-anochecer-1200.jpg')} alt={c.sunsetAlt} width="1200" height="900" loading="lazy" />
+    </div>
+  </section>
+
+  <IgFeed lang={lang} />
+</Base>

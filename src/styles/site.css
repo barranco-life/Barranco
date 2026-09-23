@@ -144,7 +144,8 @@ a:hover { color: var(--accent); }
   .site-nav a { padding: 10px 0; border-bottom: 1px solid var(--line); }
 }
 @media (min-width: 900px) {
-  .nav-menu { order: 2; flex-basis: auto; }
+  .nav-menu { order: 2; flex-basis: auto; margin-left: auto; }
+  .header-tools { order: 3; margin-left: 8px; }
 }
 
 /* --- Layout blocks --- */

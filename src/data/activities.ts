@@ -30,13 +30,13 @@ export function activities(lang: Lang): CardItem[] {
     {
       href: href(lang, 'galeria/'), kind: es ? 'Galería' : 'Gallery', kindClass: 'kind-gallery',
       title: 'Galería Barranco',
-      text: es ? 'Una sala viva para artes visuales. Recibimos propuestas.' : 'A living room for visual arts. Proposals welcome.',
+      text: es ? 'Un espacio vivo para las artes visuales. Recibimos propuestas.' : 'A lively space for the visual arts. Proposals welcome.',
       art: es ? 'Galería' : 'Gallery',
     },
     {
       href: href(lang, 'encuentros/'), kind: es ? 'Encuentros' : 'Gatherings', kindClass: 'kind-gatherings',
       title: es ? 'Organiza tu encuentro' : 'Host your gathering',
-      text: es ? 'Cumpleaños, comidas, talleres o una idea que todavía no tiene nombre.' : 'Birthdays, meals, workshops or an idea that has no name yet.',
+      text: es ? 'Cumpleaños, comidas, talleres o una idea que todavía no tiene nombre.' : 'Birthdays, meals, workshops, or an idea that doesn’t fit a category yet.',
       image: 'assets/images/barranco/encuentro-mesa-800.jpg',
       alt: es ? 'Grupo reunido en una mesa del patio al atardecer.' : 'A group at a courtyard table at sunset.',
     },
@@ -70,7 +70,7 @@ export function moreActivities(lang: Lang): CardItem[] {
     },
     {
       href: LINKS.voluntariado, kind: es ? 'Voluntariado' : 'Volunteering', external: true,
-      title: es ? 'Cuida el lugar con nosotros' : 'Care for the place with us',
+      title: es ? 'Cuida el lugar con nosotros' : 'Volunteer with us',
       text: es ? 'Voluntariado Barranco tiene su propio sitio.' : 'Voluntariado Barranco has its own site.',
       image: 'assets/images/barranco/perros-800.jpg',
       alt: es ? 'Personas con sus perros en el jardín del Barranco.' : 'People with their dogs in the Barranco garden.',

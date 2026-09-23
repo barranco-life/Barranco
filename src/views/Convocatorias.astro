@@ -21,10 +21,10 @@ const c = es ? {
   tallForm: 'Formulario de talleres o clases', whatsapp: 'Escribir por WhatsApp',
 } : {
   title: 'Propose something at Barranco', description: 'Concerts, screenings, workshops, exhibitions, gatherings or volunteering: how to propose something at Barranco, in Mallasa.',
-  lead: 'Barranco is made by the people who arrive with an idea. If you want to play, screen, teach, exhibit or celebrate here, this is the way.',
-  howT: 'How we talk it through', how: 'Every proposal is discussed case by case. If it suits the place, we find a way. If it needs adjustments, we say so. If it is not the right moment or does not fit, we will say that clearly too.',
+  lead: 'Barranco is shaped by the people who arrive with an idea. If you want to play, screen, teach, exhibit or celebrate here, this is the way.',
+  howT: 'How proposals work', how: 'We look at every proposal case by case. If it works for the place, we find a way. If it needs adjustments, we say so. If it is not the right moment or does not fit, we will say that clearly too.',
   tallT: 'Workshops and classes: the contribution to the space',
-  tall: 'We work with a contribution to the space, not a rental. For workshops and activities that charge the public, the contribution is the greater of:',
+  tall: 'We work with a contribution to the space, not a rental. For workshops and activities that charge the public, the contribution is whichever is higher:',
   tallList: ['100 Bs for up to 2 hours, plus 50 Bs for each additional hour;', 'or 20% of what is collected.'],
   tallExtras: 'Extras (sound, lights, projector, technical support) are quoted separately. For free, community or especially aligned activities we can consider an adjustment.',
   tallForm: 'Workshop or class form', whatsapp: 'Message us on WhatsApp',
@@ -32,7 +32,7 @@ const c = es ? {
 const cards = [
   { href: propose, kind: es ? 'Música · cine · talleres' : 'Music · cinema · workshops', title: es ? 'Un concierto, una función o un taller' : 'A concert, a screening or a workshop', text: es ? 'Cuéntanos quién eres, qué propones y cuándo.' : 'Tell us who you are, what you propose and when.' },
   { href: href(lang, 'galeria/'), kind: es ? 'Galería' : 'Gallery', kindClass: 'kind-gallery', title: es ? 'Una exposición' : 'An exhibition', text: es ? 'La galería recibe propuestas de artes visuales.' : 'The gallery welcomes visual arts proposals.' },
-  { href: href(lang, 'encuentros/'), kind: es ? 'Encuentros' : 'Gatherings', kindClass: 'kind-gatherings', title: es ? 'Un encuentro de tu grupo' : 'A gathering for your group', text: es ? 'Cumpleaños, comidas, talleres o ideas que todavía no tienen nombre.' : 'Birthdays, meals, workshops or ideas that have no name yet.' },
+  { href: href(lang, 'encuentros/'), kind: es ? 'Encuentros' : 'Gatherings', kindClass: 'kind-gatherings', title: es ? 'Un encuentro de tu grupo' : 'A gathering for your group', text: es ? 'Cumpleaños, comidas, talleres o ideas que todavía no tienen nombre.' : 'Birthdays, meals, workshops, or ideas that don’t fit a category yet.' },
   { href: LINKS.formEquipo, kind: es ? 'Equipo' : 'Team', title: es ? 'Ser parte del equipo' : 'Join the team', text: es ? 'Llena el formulario del equipo Barranco, o súmate al voluntariado.' : 'Fill in the Barranco team form, or join the volunteers.', external: true },
 ];
 ---

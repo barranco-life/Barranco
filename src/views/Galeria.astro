@@ -6,8 +6,8 @@ const { lang } = Astro.props;
 const es = lang === 'es';
 // Terms: Galería README + LC §20 (deposit 200 Bs refundable, proposals by WhatsApp; Ernesto 2026-09-23).
 const c = es ? {
-  title: 'Galería Barranco', description: 'Una sala viva para artes visuales en Mallasa, La Paz. Recibimos propuestas de artistas, colectivos, estudiantes y universidades.',
-  lead: 'Una sala viva para artes visuales dentro del Barranco: más cercana, más abierta y conectada con la naturaleza y con la comunidad que ya habita el lugar.',
+  title: 'Galería Barranco', description: 'Un espacio vivo para las artes visuales en Mallasa, La Paz. Recibimos propuestas de artistas, colectivos, estudiantes y universidades.',
+  lead: 'Un espacio vivo para las artes visuales dentro del Barranco: más cercano, más abierto y conectado con la naturaleza y con la comunidad que ya habita el lugar.',
   now: 'Ahora: la sala está abierta a nuevas propuestas. Si tienes una muestra en mente, cuéntanos.',
   lookT: 'Qué buscamos',
   look: [
@@ -31,9 +31,9 @@ const c = es ? {
   note: 'Proponer no garantiza una fecha, pero nos permite revisar tu propuesta con seriedad y responderte con una ruta clara.',
   cta: 'Proponer por WhatsApp',
 } : {
-  title: 'Barranco Gallery', description: 'A living room for visual arts in Mallasa, La Paz. We welcome proposals from artists, collectives, students and universities.',
-  lead: 'A living room for visual arts inside Barranco: closer, more open, and connected with nature and with the community that already lives the place.',
-  now: 'Now: the room is open to new proposals. If you have a show in mind, tell us.',
+  title: 'Barranco Gallery', description: 'A lively space for the visual arts in Mallasa, La Paz. We welcome proposals from artists, collectives, students and universities.',
+  lead: 'A lively space for the visual arts inside Barranco: more approachable, more open, and connected with nature and with the community already rooted here.',
+  now: 'Right now the gallery is open to new proposals. If you have a show in mind, tell us about it.',
   lookT: 'What we are looking for',
   look: [
     'We want there to always be something to see at Barranco, even when there is no event: a show, a work, a reason to come in and stay a while.',
@@ -44,16 +44,16 @@ const c = es ? {
   terms: [
     ['Length', 'Each show runs for 3 to 6 weeks, depending on availability and the kind of proposal.'],
     ['Deposit', '200 Bs, refundable, for the care of the space and possible minor repairs.'],
-    ['Hanging', 'Each artist or collective coordinates hanging and taking down with us. Everything is left as good as or better than it was found.'],
+    ['Hanging', 'Each artist or collective coordinates hanging and taking down with us. Leave the room as you found it, or better.'],
     ['Sales', 'Sales go mainly to the exhibitors. If Barranco takes part in selling (catalogue, attention, intermediation), a contribution or commission is agreed beforehand.'],
     ['Promotion', 'We support your show on our social media and community channels.'],
-    ['Opening', 'An opening or closing can be organised as a co-produced event, with clear agreements on logistics and contributions.'],
+    ['Opening', 'An opening or closing event can be organised as a co-production, with clear agreements on logistics and contributions.'],
     ['Shared use', 'The room also hosts compatible uses such as yoga or workshops, always caring for the works according to their fragility and placement.'],
     ['Outdoors', 'Some proposals can extend into the gardens, with extra agreements on safety, weather and installation.'],
   ],
   proposeT: 'How to propose a show', propose: 'Message us on WhatsApp in this format. It does not need to be perfect: it is how the conversation starts.',
   template: 'Hi, I would like to propose a show at Barranco Gallery.\n\nName or collective:\nKind of work:\nNumber of pieces (approx.):\nDates you are interested in:\nLink to your work (Instagram, portfolio):',
-  note: 'Proposing does not guarantee a date, but it lets us review your proposal seriously and answer you with a clear path.',
+  note: 'Proposing does not guarantee a date, but it lets us review your proposal properly and reply with clear next steps.',
   cta: 'Propose on WhatsApp',
 };
 ---

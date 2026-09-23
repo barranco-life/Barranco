@@ -481,3 +481,20 @@ img {
     margin: 0;
   }
 }
+
+.page-head,
+.site-footer {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+@media (max-width: 720px) {
+  .site-header__brand img {
+    width: 120px;
+  }
+
+  .site-nav {
+    gap: 2px 14px;
+    font-size: 0.9rem;
+  }
+}

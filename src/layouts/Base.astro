@@ -10,7 +10,7 @@ interface Props {
   description: string;
   image?: string;
 }
-const { lang, path, title, description, image = 'assets/images/barranco/valle-de-la-luna-1600.jpg' } = Astro.props;
+const { lang, path, title, description, image = 'assets/images/barranco/valle-de-la-luna-og-1200x630.jpg' } = Astro.props;
 const other: Lang = lang === 'es' ? 'en' : 'es';
 const t = UI[lang];
 const site = Astro.site!;

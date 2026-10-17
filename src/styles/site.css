@@ -228,6 +228,7 @@ pre.template { background: var(--surface); border: 1px solid var(--line); border
 @media (min-width: 700px) { .ig-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 1040px) { .ig-grid { grid-template-columns: repeat(3, 1fr); } }
 .ig-grid .instagram-media { min-width: 0 !important; width: 100% !important; margin: 0 !important; }
+.ig-grid .instagram-media a { overflow-wrap: anywhere; }
 
 /* Footer */
 .site-footer { background: var(--band); border-top: 1px solid var(--line); padding: 40px 0 48px; margin-top: 40px; font-size: 0.98rem; color: var(--muted); }

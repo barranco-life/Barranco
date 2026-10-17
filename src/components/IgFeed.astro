@@ -7,8 +7,8 @@ const date = new Date(`${IG.updated}T12:00:00`).toLocaleDateString(lang === 'es'
   day: 'numeric', month: 'long', year: 'numeric',
 });
 const t = {
-  es: { title: 'Lo último en Instagram', updated: `Última publicación: ${date}.`, all: 'Ver todo en Instagram' },
-  en: { title: 'Latest on Instagram', updated: `Latest post: ${date}.`, all: 'See everything on Instagram' },
+  es: { title: 'Lo último en Instagram', updated: `Última publicación: ${date}.`, all: 'Ver todo en Instagram', post: 'Ver la publicación en Instagram' },
+  en: { title: 'Latest on Instagram', updated: `Latest post: ${date}.`, all: 'See everything on Instagram', post: 'See the post on Instagram' },
 }[lang];
 ---
 <section class="section section--band" id="agenda" aria-labelledby="agenda-title">
@@ -19,7 +19,7 @@ const t = {
     <div class="ig-grid">
       {IG.posts.map((url) => (
         <blockquote class="instagram-media" data-instgrm-permalink={url} data-instgrm-version="14">
-          <a href={url}>{url}</a>
+          <a href={url}>{t.post}</a>
         </blockquote>
       ))}
     </div>

@@ -14,7 +14,9 @@ export function wa(who: keyof typeof WA, text: string): string {
 }
 
 export const LINKS = {
-  map: 'https://goo.gl/maps/iWB6R5HZnREL7ALKA',
+  // Canonical listing «Proyecto Cultural Barranco» (LC §20, adopted 2026-09-30); the old
+  // goo.gl link still works but carries the former name.
+  map: 'https://maps.app.goo.gl/RfmcNoBoGjeC9GhS7',
   instagram: 'https://www.instagram.com/barranco.life/',
   cinemaInstagram: 'https://www.instagram.com/cinema.barranco/',
   facebook: 'https://www.facebook.com/barranco.life',

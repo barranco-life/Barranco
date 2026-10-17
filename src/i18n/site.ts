@@ -46,7 +46,8 @@ export const UI = {
   es: {
     skip: 'Saltar al contenido',
     menu: 'Menú',
-    theme: 'Cambiar entre tema claro y oscuro',
+    theme: 'Tema oscuro',
+    themeHint: 'Cambiar entre tema claro y oscuro',
     langSwitch: 'English',
     langSwitchLabel: 'Read this page in English',
     tagline: 'Proyecto Cultural Barranco · Mallasa, La Paz · desde diciembre de 2020',
@@ -57,7 +58,8 @@ export const UI = {
   en: {
     skip: 'Skip to content',
     menu: 'Menu',
-    theme: 'Switch between light and dark theme',
+    theme: 'Dark theme',
+    themeHint: 'Switch between light and dark theme',
     langSwitch: 'Español',
     langSwitchLabel: 'Leer esta página en español',
     tagline: 'Barranco Cultural Project · Mallasa, La Paz · since December 2020',

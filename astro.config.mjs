@@ -4,6 +4,7 @@
 // Spanish lives at the root and English under /en/ (prefixDefaultLocale: false), so
 // /encuentros/ stays where the printed QR codes point.
 import { defineConfig } from 'astro/config';
+import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: process.env.SITE_URL ?? 'https://barranco-life.github.io',
@@ -15,4 +16,8 @@ export default defineConfig({
     locales: ['es', 'en'],
     routing: { prefixDefaultLocale: false },
   },
+  integrations: [
+    // The old English Encuentros URL is only a redirect, so it stays out of the sitemap.
+    sitemap({ filter: (page) => !/\/encuentros\/en\/$/.test(page) }),
+  ],
 });

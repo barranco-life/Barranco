@@ -45,7 +45,7 @@ const cards = [
   </section>
   <section class="section">
     <div class="wrap">
-      <Cards items={cards.map((x) => ({ ...x, art: x.kind.split(' ')[0] }))} />
+      <Cards level={2} items={cards.map((x) => ({ ...x, art: x.kind.split(' ')[0] }))} />
       <div class="prose" style="margin-top:32px">
         <h2>{c.howT}</h2>
         <p>{c.how}</p>

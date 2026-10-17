@@ -25,4 +25,21 @@ const t = {
     </div>
   </div>
 </section>
-<script is:inline async src="https://www.instagram.com/embed.js"></script>
+<script is:inline>
+  // Instagram's embed script is heavy and sets third-party cookies, so it loads only when the
+  // feed comes near the screen. Until then each post is a plain link.
+  (() => {
+    const feed = document.getElementById('agenda');
+    const load = () => {
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.instagram.com/embed.js';
+      document.body.append(s);
+    };
+    if (!feed || !('IntersectionObserver' in window)) return load();
+    const io = new IntersectionObserver((entries) => {
+      if (entries.some((e) => e.isIntersecting)) { io.disconnect(); load(); }
+    }, { rootMargin: '400px' });
+    io.observe(feed);
+  })();
+</script>

@@ -1,5 +1,6 @@
 ---
 import '../styles/site.css';
+import { Font } from 'astro:assets';
 import { NAV, UI, EMAIL, LINKS, href, asset, wa, type Lang } from '../i18n/site';
 
 interface Props {
@@ -30,6 +31,8 @@ const current = (p: string) => path.startsWith(p);
     <link rel="alternate" hreflang="en" href={abs('en')} />
     <link rel="alternate" hreflang="x-default" href={abs('es')} />
     <link rel="sitemap" href={asset('sitemap-index.xml')} />
+    <link rel="icon" type="image/png" sizes="48x48" href={asset('favicon-48.png')} />
+    <link rel="apple-touch-icon" href={asset('apple-touch-icon.png')} />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content={lang === 'es' ? 'es_BO' : 'en_US'} />
     <meta property="og:title" content={fullTitle} />
@@ -37,6 +40,9 @@ const current = (p: string) => path.startsWith(p);
     <meta property="og:url" content={abs(lang)} />
     <meta property="og:image" content={new URL(asset(image), site).href} />
     <meta name="twitter:card" content="summary_large_image" />
+    <Font cssVariable="--font-brandon" preload={[{ weight: 400, style: 'normal' }]} />
+    <Font cssVariable="--font-monument" preload={[{ weight: 800, style: 'normal' }]} />
+    <Font cssVariable="--font-whyte" />
     <meta name="theme-color" content="#141210" media="(prefers-color-scheme: dark)" />
     <meta name="theme-color" content="#faf6ef" media="(prefers-color-scheme: light)" />
     <script is:inline>
@@ -46,7 +52,7 @@ const current = (p: string) => path.startsWith(p);
         if (saved === 'light' || saved === 'dark') document.documentElement.dataset.theme = saved;
       } catch (e) {}
     </script>
-    <script is:inline data-goatcounter="https://barranco-life.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+    <script is:inline data-goatcounter="https://barranco-life.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
   </head>
   <body>
     <a class="skip" href="#main">{t.skip}</a>

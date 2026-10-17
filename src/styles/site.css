@@ -3,19 +3,12 @@
    headings, small spaced labels, photos as heroes. Light and dark follow the system; the header
    button overrides and remembers. Magenta is for large accents and buttons, never small body text. */
 
-@font-face { font-family: 'Brandon'; src: url('../fonts/Brandon_reg.otf') format('opentype'); font-weight: 400; font-display: swap; }
-@font-face { font-family: 'Brandon'; src: url('../fonts/Brandon_reg_it.otf') format('opentype'); font-weight: 400; font-style: italic; font-display: swap; }
-@font-face { font-family: 'Brandon'; src: url('../fonts/Brandon_med.otf') format('opentype'); font-weight: 500; font-display: swap; }
-@font-face { font-family: 'Brandon'; src: url('../fonts/Brandon_bld.otf') format('opentype'); font-weight: 700; font-display: swap; }
-@font-face { font-family: 'Brandon'; src: url('../fonts/Brandon_blk.otf') format('opentype'); font-weight: 900; font-display: swap; }
-@font-face { font-family: 'Monument'; src: url('../fonts/MonumentExtended-Ultrabold.otf') format('opentype'); font-weight: 800; font-display: swap; }
-@font-face { font-family: 'Monument'; src: url('../fonts/MonumentExtended-Regular.otf') format('opentype'); font-weight: 400; font-display: swap; }
-@font-face { font-family: 'Whyte Inktrap'; src: url('../fonts/WhyteInktrap-Medium.otf') format('opentype'); font-weight: 500; font-display: swap; }
 
 :root {
-  --font-text: 'Brandon', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
-  --font-display: 'Monument', 'Brandon', ui-sans-serif, system-ui, sans-serif;
-  --font-label: 'Whyte Inktrap', 'Brandon', ui-sans-serif, system-ui, sans-serif;
+  /* The families and their fallbacks come from the fonts API (astro.config.mjs, Base.astro). */
+  --font-text: var(--font-brandon);
+  --font-display: var(--font-monument);
+  --font-label: var(--font-whyte);
 
   /* Light */
   --bg: #faf6ef;
@@ -162,7 +155,7 @@ h1, .display {
   font-size: clamp(1.7rem, 6.2vw, 3.6rem); letter-spacing: 0.01em; overflow-wrap: anywhere;
 }
 h2 { font-family: var(--font-display); font-weight: 800; text-transform: uppercase; font-size: clamp(1.25rem, 3.6vw, 2rem); }
-h3 { font-weight: 900; font-size: 1.25rem; }
+h3, .card h2 { font-family: inherit; font-weight: 900; font-size: 1.25rem; text-transform: none; }
 p { margin: 0 0 14px; }
 .lead { font-size: clamp(1.15rem, 2.6vw, 1.4rem); color: var(--muted); max-width: 44rem; }
 .muted { color: var(--muted); }
@@ -208,8 +201,8 @@ p { margin: 0 0 14px; }
 .card__art { aspect-ratio: 4 / 3; display: grid; place-items: center; background: var(--kind, var(--accent-strong)); color: #fff; font-family: var(--font-display); font-weight: 800; font-size: 1.6rem; text-transform: uppercase; }
 .card__body { padding: 16px 18px 20px; }
 .card__kind { font-family: var(--font-label); text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.75rem; color: var(--kind, var(--accent)); margin: 0 0 6px; }
-.card h3 a { text-decoration: none; }
-.card h3 a::after { content: ' →'; color: var(--kind, var(--accent)); }
+.card :is(h2, h3) a { text-decoration: none; }
+.card :is(h2, h3) a::after { content: ' →'; color: var(--kind, var(--accent)); }
 .card p { color: var(--muted); margin: 0; }
 .kind-music { --kind: var(--music); }
 .kind-cinema { --kind: var(--cinema); }

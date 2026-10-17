@@ -1,9 +1,10 @@
 ---
+import Photo from '../components/Photo.astro';
 import Base from '../layouts/Base.astro';
 import Cards from '../components/Cards.astro';
 import IgFeed from '../components/IgFeed.astro';
 import { activities } from '../data/activities';
-import { href, asset, LINKS, type Lang } from '../i18n/site';
+import { href, LINKS, type Lang } from '../i18n/site';
 interface Props { lang: Lang }
 const { lang } = Astro.props;
 const es = lang === 'es';
@@ -44,7 +45,7 @@ const c = es ? {
 ---
 <Base lang={lang} path="" title={c.title} description={c.description}>
   <section class="hero" aria-labelledby="home-title">
-    <img src={asset('assets/images/barranco/valle-de-la-luna-1600.jpg')} alt="" width="1200" height="1600" fetchpriority="high" />
+    <Photo src="assets/images/barranco/valle-de-la-luna-1600.jpg" alt="" width={1200} height={1600} priority />
     <div class="hero__content">
       <p class="eyebrow">{c.eyebrow}</p>
       <h1 id="home-title">{c.h1}</h1>
@@ -81,7 +82,7 @@ const c = es ? {
         <h2>{c.sunsetTitle}</h2>
         <p class="lead">{c.sunset}</p>
       </div>
-      <img src={asset('assets/images/barranco/zona-baja-anochecer-1200.jpg')} alt={c.sunsetAlt} width="900" height="1200" loading="lazy" />
+      <Photo src="assets/images/barranco/zona-baja-anochecer-1200.jpg" alt={c.sunsetAlt} width={900} height={1200} />
     </div>
   </section>
 

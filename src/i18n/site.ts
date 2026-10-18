@@ -25,6 +25,9 @@ export const LINKS = {
   tripadvisor:
     'https://www.tripadvisor.es/Attraction_Review-g294072-d24052080-Reviews-Proyecto_Cultural_Barranco-La_Paz_La_Paz_Department.html',
   airbnb: 'https://www.airbnb.com.bo/h/mallasabarranco',
+  // «Comunidad Barranco» WhatsApp group: the invite link Ernesto gives in posts (ER
+  // Projects/Barranco/README.md, Cinema/Posts.md: "para votar próximas funciones").
+  community: 'https://chat.whatsapp.com/EUNIisAbWSrB4tqySGtimQ',
   voluntariado: 'https://voluntariado.barranco.life/',
   formTalleres: 'https://forms.gle/eMgoKJgSnFVsjr868',
   formEquipo: 'https://forms.gle/PgnyeMacPtkxvoWx9',

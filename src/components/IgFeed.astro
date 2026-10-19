@@ -7,8 +7,8 @@ const date = new Date(`${IG.updated}T12:00:00`).toLocaleDateString(lang === 'es'
   day: 'numeric', month: 'long', year: 'numeric',
 });
 const t = {
-  es: { title: 'Lo último en Instagram', updated: `Última publicación: ${date}.`, all: 'Ver todo en Instagram' },
-  en: { title: 'Latest on Instagram', updated: `Latest post: ${date}.`, all: 'See everything on Instagram' },
+  es: { title: 'Lo último en Instagram', updated: `Última publicación: ${date}.`, all: 'Ver todo en Instagram', post: 'Ver la publicación en Instagram' },
+  en: { title: 'Latest on Instagram', updated: `Latest post: ${date}.`, all: 'See everything on Instagram', post: 'See the post on Instagram' },
 }[lang];
 ---
 <section class="section section--band" id="agenda" aria-labelledby="agenda-title">
@@ -19,10 +19,27 @@ const t = {
     <div class="ig-grid">
       {IG.posts.map((url) => (
         <blockquote class="instagram-media" data-instgrm-permalink={url} data-instgrm-version="14">
-          <a href={url}>{url}</a>
+          <a href={url}>{t.post}</a>
         </blockquote>
       ))}
     </div>
   </div>
 </section>
-<script is:inline async src="https://www.instagram.com/embed.js"></script>
+<script is:inline>
+  // Instagram's embed script is heavy and sets third-party cookies, so it loads only when the
+  // feed comes near the screen. Until then each post is a plain link.
+  (() => {
+    const feed = document.getElementById('agenda');
+    const load = () => {
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.instagram.com/embed.js';
+      document.body.append(s);
+    };
+    if (!feed || !('IntersectionObserver' in window)) return load();
+    const io = new IntersectionObserver((entries) => {
+      if (entries.some((e) => e.isIntersecting)) { io.disconnect(); load(); }
+    }, { rootMargin: '400px' });
+    io.observe(feed);
+  })();
+</script>

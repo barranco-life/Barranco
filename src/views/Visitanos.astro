@@ -1,6 +1,7 @@
 ---
+import Photo from '../components/Photo.astro';
 import Base from '../layouts/Base.astro';
-import { asset, wa, EMAIL, LINKS, type Lang } from '../i18n/site';
+import { wa, EMAIL, LINKS, type Lang } from '../i18n/site';
 interface Props { lang: Lang }
 const { lang } = Astro.props;
 const es = lang === 'es';
@@ -74,7 +75,7 @@ const c = es ? {
         <h2>{c.backT}</h2>
         <p>{c.back}</p>
       </div>
-      <img src={asset('assets/images/barranco/' + c.photos[0][0])} alt={c.photos[0][1]} width="1200" height="900" loading="lazy" />
+      <Photo src={'assets/images/barranco/' + c.photos[0][0]} alt={c.photos[0][1]} width={1200} height={900} />
     </div>
   </section>
 
@@ -98,7 +99,7 @@ const c = es ? {
     <div class="wrap">
       <div class="gallery-row">
         {c.photos.slice(1).map(([f, alt]) => (
-          <figure><img src={asset('assets/images/barranco/' + f)} alt={alt} width="1200" height="900" loading="lazy" /><figcaption>{alt}</figcaption></figure>
+          <figure><Photo src={'assets/images/barranco/' + f} alt={alt} width={1200} height={900} /><figcaption>{alt}</figcaption></figure>
         ))}
       </div>
     </div>

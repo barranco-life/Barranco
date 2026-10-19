@@ -1,6 +1,7 @@
 ---
+import Photo from '../components/Photo.astro';
 import Base from '../layouts/Base.astro';
-import { asset, wa, LINKS, type Lang } from '../i18n/site';
+import { wa, LINKS, type Lang } from '../i18n/site';
 interface Props { lang: Lang }
 const { lang } = Astro.props;
 const es = lang === 'es';
@@ -36,7 +37,7 @@ const c = es ? {
           <a class="button button--ghost" href={wa('mj', c.waText)}>{c.ask}</a>
         </div>
       </div>
-      <img src={asset('assets/images/barranco/jardin-casita-800.jpg')} alt={c.alt} width="800" height="600" loading="lazy" />
+      <Photo src="assets/images/barranco/jardin-casita-800.jpg" alt={c.alt} width={800} height={600} />
     </div>
   </section>
 </Base>

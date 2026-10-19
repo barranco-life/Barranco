@@ -14,7 +14,9 @@ export function wa(who: keyof typeof WA, text: string): string {
 }
 
 export const LINKS = {
-  map: 'https://goo.gl/maps/iWB6R5HZnREL7ALKA',
+  // Canonical listing «Proyecto Cultural Barranco» (LC §20, adopted 2026-09-30); the old
+  // goo.gl link still works but carries the former name.
+  map: 'https://maps.app.goo.gl/RfmcNoBoGjeC9GhS7',
   instagram: 'https://www.instagram.com/barranco.life/',
   cinemaInstagram: 'https://www.instagram.com/cinema.barranco/',
   facebook: 'https://www.facebook.com/barranco.life',
@@ -23,6 +25,9 @@ export const LINKS = {
   tripadvisor:
     'https://www.tripadvisor.es/Attraction_Review-g294072-d24052080-Reviews-Proyecto_Cultural_Barranco-La_Paz_La_Paz_Department.html',
   airbnb: 'https://www.airbnb.com.bo/h/mallasabarranco',
+  // «Comunidad Barranco» WhatsApp group: the invite link Ernesto gives in posts (ER
+  // Projects/Barranco/README.md, Cinema/Posts.md: "para votar próximas funciones").
+  community: 'https://chat.whatsapp.com/EUNIisAbWSrB4tqySGtimQ',
   voluntariado: 'https://voluntariado.barranco.life/',
   formTalleres: 'https://forms.gle/eMgoKJgSnFVsjr868',
   formEquipo: 'https://forms.gle/PgnyeMacPtkxvoWx9',
@@ -46,7 +51,8 @@ export const UI = {
   es: {
     skip: 'Saltar al contenido',
     menu: 'Menú',
-    theme: 'Cambiar entre tema claro y oscuro',
+    theme: 'Tema oscuro',
+    themeHint: 'Cambiar entre tema claro y oscuro',
     langSwitch: 'English',
     langSwitchLabel: 'Read this page in English',
     tagline: 'Proyecto Cultural Barranco · Mallasa, La Paz · desde diciembre de 2020',
@@ -57,7 +63,8 @@ export const UI = {
   en: {
     skip: 'Skip to content',
     menu: 'Menu',
-    theme: 'Switch between light and dark theme',
+    theme: 'Dark theme',
+    themeHint: 'Switch between light and dark theme',
     langSwitch: 'Español',
     langSwitchLabel: 'Leer esta página en español',
     tagline: 'Barranco Cultural Project · Mallasa, La Paz · since December 2020',

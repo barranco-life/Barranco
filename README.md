@@ -6,10 +6,25 @@ Este repo empieza como una base pública y viva para documentar formas de habita
 
 ## Encuentros
 
-- [Cómo hacer tu encuentro en el Barranco](./encuentros/README.md)
+- [Cómo hacer tu encuentro en el Barranco](https://barranco-life.github.io/Barranco/encuentros/)
 
 Esta primera versión no es una tarifa final ni un contrato. Es una forma de abrir conversación para encuentros, talleres, cumpleaños, comidas, cine, música, yoga u otras propuestas que resuenen con el espacio.
 
 ## Estado
 
-v0.1 — semilla pública inicial. El contenido se irá ajustando con usos reales del espacio.
+v0.3 — sitio en Astro 7.3.8, en español e inglés, con tema claro y oscuro. Publicado en
+<https://barranco-life.github.io/Barranco/>. El contenido se va ajustando con usos reales del espacio.
+
+## Desarrollo
+
+Node 22 o más nuevo.
+
+```bash
+npm ci
+npm run dev       # sitio local con recarga
+npm run build     # verifica que cada página tenga su par en el otro idioma y construye en dist/
+npm run check     # revisión de tipos (astro check)
+npm run images    # después de agregar fotos: las comprime y crea sus copias AVIF
+```
+
+Cada push a `main` construye y publica el sitio (`.github/workflows/deploy.yml`).

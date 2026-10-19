@@ -1,5 +1,5 @@
 ---
-import { asset } from '../i18n/site';
+import Photo from './Photo.astro';
 export interface CardItem {
   href: string;
   kind: string;        // label shown above the title
@@ -11,18 +11,20 @@ export interface CardItem {
   art?: string;        // short word shown when there is no photo
   external?: boolean;
 }
-interface Props { items: CardItem[] }
-const { items } = Astro.props;
+// level: the card titles' heading level; 2 when the list comes straight after the page's h1.
+interface Props { items: CardItem[]; level?: 2 | 3 }
+const { items, level = 3 } = Astro.props;
+const H = `h${level}`;
 ---
 <ul class="cards">
   {items.map((c) => (
     <li class={`card ${c.kindClass ?? ''}`}>
       {c.image
-        ? <img src={asset(c.image)} alt={c.alt ?? ''} width="800" height="600" loading="lazy" />
+        ? <Photo src={c.image} alt={c.alt ?? ''} width={800} height={600} />
         : <div class="card__art" aria-hidden="true">{c.art}</div>}
       <div class="card__body">
         <p class="card__kind">{c.kind}</p>
-        <h3><a href={c.href} rel={c.external ? 'noopener' : undefined}>{c.title}</a></h3>
+        <H><a href={c.href} rel={c.external ? 'noopener' : undefined}>{c.title}</a></H>
         <p>{c.text}</p>
       </div>
     </li>

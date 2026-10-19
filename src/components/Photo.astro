@@ -1,0 +1,18 @@
+---
+// A photo from public/: the JPEG as written, plus its AVIF copy (scripts/optimize-images.mjs)
+// for browsers that take it. Browsers that do not know AVIF skip the <source> and use the <img>.
+import { asset } from '../i18n/site';
+interface Props {
+  src: string; // path under public/, ending in .jpg
+  alt: string;
+  width: number;
+  height: number;
+  priority?: boolean; // the page's main photo: fetched first, never lazy
+}
+const { src, alt, width, height, priority = false } = Astro.props;
+---
+<picture>
+  <source type="image/avif" srcset={asset(src.replace(/\.jpg$/, '.avif'))} />
+  <img src={asset(src)} alt={alt} width={width} height={height}
+    loading={priority ? undefined : 'lazy'} fetchpriority={priority ? 'high' : undefined} />
+</picture>
